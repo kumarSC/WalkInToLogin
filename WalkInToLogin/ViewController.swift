@@ -21,6 +21,8 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate {
     var peripheralManager = CBPeripheralManager()
     var advertisedData = NSDictionary()
 
+
+
 //    let config = PNConfiguration(forOrigin:"com.atlassian.walkintologin", publishKey: "pub-c-96d69393-2a7b-4cb9-8512-b2f658ff6575", subscribeKey: "sub-c-c235e5ec-9f04-11e5-9a49-02ee2ddab7fe", secretKey:"sec-c-MzBhN2Y5MjYtMTYwZS00ZTRmLTg2NDgtMmYwYzg1YjQ2YWFj")
 
     override func viewDidLoad() {
@@ -32,6 +34,7 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate {
         self.peripheralManager = CBPeripheralManager(delegate: self, queue: nil, options: nil)
 
         SharedPubNubManager.instantiatePubNub()
+        Observer()
     }
 
     @IBAction func send(sender: AnyObject) {
@@ -43,11 +46,14 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate {
     }
 
     func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager) {
+        var statusMessage = ""
         switch peripheral.state {
         case CBPeripheralManagerState.PoweredOn:
             self.peripheralManager.startAdvertising((self.advertisedData as! [String : AnyObject]))
+            statusMessage = "Bluetooth Status: Turned On"
         case CBPeripheralManagerState.PoweredOff:
             self.peripheralManager.stopAdvertising()
+            statusMessage = "Bluetooth Status: Turned Off"
         default:
             print("Bluetooth Status: Unknown")
 

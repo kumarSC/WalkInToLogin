@@ -19,6 +19,7 @@
 		DDD8C5FF1C19317600CED307 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD8C5FD1C19317600CED307 /* LaunchScreen.storyboard */; };
 		DDD8C60A1C19317600CED307 /* WalkInToLoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8C6091C19317600CED307 /* WalkInToLoginTests.swift */; };
 		DDD8C6151C19317600CED307 /* WalkInToLoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8C6141C19317600CED307 /* WalkInToLoginUITests.swift */; };
+		DDD8C6271C198CC600CED307 /* BeaconObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8C6261C198CC600CED307 /* BeaconObserver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		DDD8C6141C19317600CED307 /* WalkInToLoginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkInToLoginUITests.swift; sourceTree = "<group>"; };
 		DDD8C6161C19317600CED307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDD8C6221C196E3600CED307 /* WalkInToLogin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WalkInToLogin-Bridging-Header.h"; sourceTree = "<group>"; };
+		DDD8C6261C198CC600CED307 /* BeaconObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconObserver.swift; sourceTree = "<group>"; };
 		E81C2D6EC3B8971659111FD3 /* Pods-WalkInToLogin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkInToLogin.release.xcconfig"; path = "Pods/Target Support Files/Pods-WalkInToLogin/Pods-WalkInToLogin.release.xcconfig"; sourceTree = "<group>"; };
 		F4F3F8E76B7459265465AA89 /* Pods_WalkInToLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalkInToLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F502F44A65256564D704B736 /* Pods-WalkInToLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkInToLogin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WalkInToLogin/Pods-WalkInToLogin.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				DDD8C5F11C19317600CED307 /* AppDelegate.swift */,
 				DDD8C5F31C19317600CED307 /* ViewController.swift */,
+				DDD8C6261C198CC600CED307 /* BeaconObserver.swift */,
 				CFA811BA1C196D2700C5DF99 /* OfficeManager.swift */,
 				CFA811BB1C196D2700C5DF99 /* UserManager.swift */,
 				CFA811BE1C19722200C5DF99 /* PubNubManager.swift */,
@@ -357,6 +360,7 @@
 				CFA811BF1C19722200C5DF99 /* PubNubManager.swift in Sources */,
 				CFA811BD1C196D2700C5DF99 /* UserManager.swift in Sources */,
 				DDD8C5FA1C19317600CED307 /* WalkInToLogin.xcdatamodeld in Sources */,
+				DDD8C6271C198CC600CED307 /* BeaconObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
