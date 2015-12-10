@@ -234,6 +234,12 @@
 				TargetAttributes = {
 					DDD8C5ED1C19317600CED307 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = UPXU4CQZ5P;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					DDD8C6041C19317600CED307 = {
 						CreatedOnToolsVersion = 7.1;
@@ -494,10 +500,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = WalkInToLogin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.atlassian.WalkInToLogin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atlassian.shipit.33.ibeacon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WalkInToLogin/WalkInToLogin-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -509,10 +518,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = WalkInToLogin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.atlassian.WalkInToLogin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atlassian.shipit.33.ibeacon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WalkInToLogin/WalkInToLogin-Bridging-Header.h";
 			};
 			name = Release;
