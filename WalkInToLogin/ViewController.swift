@@ -7,17 +7,43 @@
 //
 
 import UIKit
+import CoreLocation
+import CoreBluetooth
 
-class ViewController: UIViewController {
+typealias BeaconID = UInt16
+
+class ViewController: UIViewController, CBPeripheralManagerDelegate {
+
+    let majorInt = 9
+    let major: UInt16!
+    let minorInt = 6
+    let minor: UInt16!
+    let uuid = NSUUID(UUIDString: "0CF052C2-97CA-407C-84F8-B62AAC4E9020")
+    var peripheralManager = CBPeripheralManager()
+    var advertisedData = NSDictionary()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let region = CLBeaconRegion(proximityUUID: self.uuid!, major: self.major , minor: self.minor, identifier: "com.atlassian.walkintologin")
+        self.advertisedData = region.peripheralDataWithMeasuredPower(nil)
+        self.peripheralManager = CBPeripheralManager(delegate: self, queue: nil, options: nil)
+        
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager) {
+        switch peripheral.state {
+        case CBPeripheralManagerState.PoweredOn:
+            self.peripheralManager.startAdvertising((self.advertisedData as! [String : AnyObject]))
+        case CBPeripheralManagerState.PoweredOff:
+            self.peripheralManager.stopAdvertising()
+
+        }
     }
 
 
