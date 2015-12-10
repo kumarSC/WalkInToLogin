@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DDD8C5F21C19317600CED307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8C5F11C19317600CED307 /* AppDelegate.swift */; };
+		DDD8C5F41C19317600CED307 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8C5F31C19317600CED307 /* ViewController.swift */; };
+		DDD8C5F71C19317600CED307 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD8C5F51C19317600CED307 /* Main.storyboard */; };
+		DDD8C5FA1C19317600CED307 /* WalkInToLogin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDD8C5F81C19317600CED307 /* WalkInToLogin.xcdatamodeld */; };
+		DDD8C5FC1C19317600CED307 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDD8C5FB1C19317600CED307 /* Assets.xcassets */; };
+		DDD8C5FF1C19317600CED307 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD8C5FD1C19317600CED307 /* LaunchScreen.storyboard */; };
+		DDD8C60A1C19317600CED307 /* WalkInToLoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8C6091C19317600CED307 /* WalkInToLoginTests.swift */; };
+		DDD8C6151C19317600CED307 /* WalkInToLoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8C6141C19317600CED307 /* WalkInToLoginUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DDD8C6061C19317600CED307 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDD8C5E61C19317600CED307 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDD8C5ED1C19317600CED307;
+			remoteInfo = WalkInToLogin;
+		};
+		DDD8C6111C19317600CED307 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDD8C5E61C19317600CED307 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDD8C5ED1C19317600CED307;
+			remoteInfo = WalkInToLogin;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DDD8C5EE1C19317600CED307 /* WalkInToLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkInToLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDD8C5F11C19317600CED307 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DDD8C5F31C19317600CED307 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DDD8C5F61C19317600CED307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DDD8C5F91C19317600CED307 /* WalkInToLogin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WalkInToLogin.xcdatamodel; sourceTree = "<group>"; };
+		DDD8C5FB1C19317600CED307 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DDD8C5FE1C19317600CED307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DDD8C6001C19317600CED307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDD8C6051C19317600CED307 /* WalkInToLoginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalkInToLoginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDD8C6091C19317600CED307 /* WalkInToLoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkInToLoginTests.swift; sourceTree = "<group>"; };
+		DDD8C60B1C19317600CED307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDD8C6101C19317600CED307 /* WalkInToLoginUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalkInToLoginUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDD8C6141C19317600CED307 /* WalkInToLoginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkInToLoginUITests.swift; sourceTree = "<group>"; };
+		DDD8C6161C19317600CED307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DDD8C5EB1C19317600CED307 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDD8C6021C19317600CED307 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDD8C60D1C19317600CED307 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DDD8C5E51C19317600CED307 = {
+			isa = PBXGroup;
+			children = (
+				DDD8C5F01C19317600CED307 /* WalkInToLogin */,
+				DDD8C6081C19317600CED307 /* WalkInToLoginTests */,
+				DDD8C6131C19317600CED307 /* WalkInToLoginUITests */,
+				DDD8C5EF1C19317600CED307 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DDD8C5EF1C19317600CED307 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DDD8C5EE1C19317600CED307 /* WalkInToLogin.app */,
+				DDD8C6051C19317600CED307 /* WalkInToLoginTests.xctest */,
+				DDD8C6101C19317600CED307 /* WalkInToLoginUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DDD8C5F01C19317600CED307 /* WalkInToLogin */ = {
+			isa = PBXGroup;
+			children = (
+				DDD8C5F11C19317600CED307 /* AppDelegate.swift */,
+				DDD8C5F31C19317600CED307 /* ViewController.swift */,
+				DDD8C5F51C19317600CED307 /* Main.storyboard */,
+				DDD8C5FB1C19317600CED307 /* Assets.xcassets */,
+				DDD8C5FD1C19317600CED307 /* LaunchScreen.storyboard */,
+				DDD8C6001C19317600CED307 /* Info.plist */,
+				DDD8C5F81C19317600CED307 /* WalkInToLogin.xcdatamodeld */,
+			);
+			path = WalkInToLogin;
+			sourceTree = "<group>";
+		};
+		DDD8C6081C19317600CED307 /* WalkInToLoginTests */ = {
+			isa = PBXGroup;
+			children = (
+				DDD8C6091C19317600CED307 /* WalkInToLoginTests.swift */,
+				DDD8C60B1C19317600CED307 /* Info.plist */,
+			);
+			path = WalkInToLoginTests;
+			sourceTree = "<group>";
+		};
+		DDD8C6131C19317600CED307 /* WalkInToLoginUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DDD8C6141C19317600CED307 /* WalkInToLoginUITests.swift */,
+				DDD8C6161C19317600CED307 /* Info.plist */,
+			);
+			path = WalkInToLoginUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DDD8C5ED1C19317600CED307 /* WalkInToLogin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDD8C6191C19317600CED307 /* Build configuration list for PBXNativeTarget "WalkInToLogin" */;
+			buildPhases = (
+				DDD8C5EA1C19317600CED307 /* Sources */,
+				DDD8C5EB1C19317600CED307 /* Frameworks */,
+				DDD8C5EC1C19317600CED307 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WalkInToLogin;
+			productName = WalkInToLogin;
+			productReference = DDD8C5EE1C19317600CED307 /* WalkInToLogin.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DDD8C6041C19317600CED307 /* WalkInToLoginTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDD8C61C1C19317600CED307 /* Build configuration list for PBXNativeTarget "WalkInToLoginTests" */;
+			buildPhases = (
+				DDD8C6011C19317600CED307 /* Sources */,
+				DDD8C6021C19317600CED307 /* Frameworks */,
+				DDD8C6031C19317600CED307 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDD8C6071C19317600CED307 /* PBXTargetDependency */,
+			);
+			name = WalkInToLoginTests;
+			productName = WalkInToLoginTests;
+			productReference = DDD8C6051C19317600CED307 /* WalkInToLoginTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DDD8C60F1C19317600CED307 /* WalkInToLoginUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDD8C61F1C19317600CED307 /* Build configuration list for PBXNativeTarget "WalkInToLoginUITests" */;
+			buildPhases = (
+				DDD8C60C1C19317600CED307 /* Sources */,
+				DDD8C60D1C19317600CED307 /* Frameworks */,
+				DDD8C60E1C19317600CED307 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDD8C6121C19317600CED307 /* PBXTargetDependency */,
+			);
+			name = WalkInToLoginUITests;
+			productName = WalkInToLoginUITests;
+			productReference = DDD8C6101C19317600CED307 /* WalkInToLoginUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DDD8C5E61C19317600CED307 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Sushant Choudhary";
+				TargetAttributes = {
+					DDD8C5ED1C19317600CED307 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					DDD8C6041C19317600CED307 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = DDD8C5ED1C19317600CED307;
+					};
+					DDD8C60F1C19317600CED307 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = DDD8C5ED1C19317600CED307;
+					};
+				};
+			};
+			buildConfigurationList = DDD8C5E91C19317600CED307 /* Build configuration list for PBXProject "WalkInToLogin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DDD8C5E51C19317600CED307;
+			productRefGroup = DDD8C5EF1C19317600CED307 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DDD8C5ED1C19317600CED307 /* WalkInToLogin */,
+				DDD8C6041C19317600CED307 /* WalkInToLoginTests */,
+				DDD8C60F1C19317600CED307 /* WalkInToLoginUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DDD8C5EC1C19317600CED307 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDD8C5FF1C19317600CED307 /* LaunchScreen.storyboard in Resources */,
+				DDD8C5FC1C19317600CED307 /* Assets.xcassets in Resources */,
+				DDD8C5F71C19317600CED307 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDD8C6031C19317600CED307 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDD8C60E1C19317600CED307 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DDD8C5EA1C19317600CED307 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDD8C5F41C19317600CED307 /* ViewController.swift in Sources */,
+				DDD8C5F21C19317600CED307 /* AppDelegate.swift in Sources */,
+				DDD8C5FA1C19317600CED307 /* WalkInToLogin.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDD8C6011C19317600CED307 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDD8C60A1C19317600CED307 /* WalkInToLoginTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDD8C60C1C19317600CED307 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDD8C6151C19317600CED307 /* WalkInToLoginUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DDD8C6071C19317600CED307 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDD8C5ED1C19317600CED307 /* WalkInToLogin */;
+			targetProxy = DDD8C6061C19317600CED307 /* PBXContainerItemProxy */;
+		};
+		DDD8C6121C19317600CED307 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDD8C5ED1C19317600CED307 /* WalkInToLogin */;
+			targetProxy = DDD8C6111C19317600CED307 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DDD8C5F51C19317600CED307 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDD8C5F61C19317600CED307 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DDD8C5FD1C19317600CED307 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDD8C5FE1C19317600CED307 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DDD8C6171C19317600CED307 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DDD8C6181C19317600CED307 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DDD8C61A1C19317600CED307 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WalkInToLogin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.atlassian.WalkInToLogin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DDD8C61B1C19317600CED307 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WalkInToLogin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.atlassian.WalkInToLogin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DDD8C61D1C19317600CED307 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WalkInToLoginTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.atlassian.WalkInToLoginTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalkInToLogin.app/WalkInToLogin";
+			};
+			name = Debug;
+		};
+		DDD8C61E1C19317600CED307 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WalkInToLoginTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.atlassian.WalkInToLoginTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalkInToLogin.app/WalkInToLogin";
+			};
+			name = Release;
+		};
+		DDD8C6201C19317600CED307 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WalkInToLoginUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.atlassian.WalkInToLoginUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WalkInToLogin;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		DDD8C6211C19317600CED307 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WalkInToLoginUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.atlassian.WalkInToLoginUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WalkInToLogin;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DDD8C5E91C19317600CED307 /* Build configuration list for PBXProject "WalkInToLogin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDD8C6171C19317600CED307 /* Debug */,
+				DDD8C6181C19317600CED307 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDD8C6191C19317600CED307 /* Build configuration list for PBXNativeTarget "WalkInToLogin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDD8C61A1C19317600CED307 /* Debug */,
+				DDD8C61B1C19317600CED307 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DDD8C61C1C19317600CED307 /* Build configuration list for PBXNativeTarget "WalkInToLoginTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDD8C61D1C19317600CED307 /* Debug */,
+				DDD8C61E1C19317600CED307 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DDD8C61F1C19317600CED307 /* Build configuration list for PBXNativeTarget "WalkInToLoginUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDD8C6201C19317600CED307 /* Debug */,
+				DDD8C6211C19317600CED307 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DDD8C5F81C19317600CED307 /* WalkInToLogin.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DDD8C5F91C19317600CED307 /* WalkInToLogin.xcdatamodel */,
+			);
+			currentVersion = DDD8C5F91C19317600CED307 /* WalkInToLogin.xcdatamodel */;
+			path = WalkInToLogin.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DDD8C5E61C19317600CED307 /* Project object */;
+}
