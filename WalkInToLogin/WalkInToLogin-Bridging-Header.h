@@ -3,7 +3,7 @@
 //
 
 #ifdef __OBJC__
-#import &lt;UIKit/UIKit.h&gt;
-#import &lt;Foundation/Foundation.h&gt;
-#import "PNImports.h"
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <PubNub/PubNub.h>
 #endif
