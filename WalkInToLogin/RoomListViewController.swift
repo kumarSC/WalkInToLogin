@@ -37,6 +37,7 @@ class RoomListViewController: UITableViewController, CBPeripheralManagerDelegate
 
         SharedPubNubManager.instantiatePubNub()
         Observer()
+        Observer.switchSpotting()
     }
 
     @IBAction func send(sender: AnyObject) {

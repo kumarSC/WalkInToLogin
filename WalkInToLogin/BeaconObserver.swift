@@ -37,7 +37,7 @@ class Observer: NSObject, CLLocationManagerDelegate {
         locationManager.delegate = self
     }
 
-    func switchSpotting(sender: AnyObject) {
+    func switchSpotting() {
         locationManager.requestAlwaysAuthorization()
         locationManager.startMonitoringForRegion(beaconRegion)
         locationManager.startUpdatingLocation()
@@ -45,7 +45,7 @@ class Observer: NSObject, CLLocationManagerDelegate {
 
     func locationManager(manager: CLLocationManager, didStartMonitoringForRegion region: CLRegion) {
         locationManager.requestStateForRegion(region)
-        
+
     }
 
 
@@ -83,9 +83,31 @@ class Observer: NSObject, CLLocationManagerDelegate {
 
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
 
-    }
+        let foundBeacons = beacons
+            if foundBeacons.count > 0 {
+                if let closestBeacon = foundBeacons[0] as? CLBeacon {
+                    if closestBeacon != lastFoundBeacon || lastProximity != closestBeacon.proximity  {
+                        lastFoundBeacon = closestBeacon
+                        lastProximity = closestBeacon.proximity
 
+                        var proximityMessage: String!
+                        switch lastFoundBeacon.proximity {
+                        case CLProximity.Immediate:
+                            proximityMessage = "Very close"
 
-    
-    
+                        case CLProximity.Near:
+                            proximityMessage = "Near"
+
+                        case CLProximity.Far:
+                            proximityMessage = "Far"
+
+                        default:
+                            proximityMessage = "Where's the beacon?"
+                        }
+                    }
+                }
+            }
+        }
+        
+
 }
