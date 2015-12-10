@@ -9,6 +9,11 @@
 import Foundation
 import PubNub
 
+let ChannelsIDs: [String] = [
+    "com.atlassian.walkintologin_\(2)_\(1)",
+    "com.atlassian.walkintologin_\(2)_\(2)"
+]
+
 let SharedPubNubManager = PubNubManager()
 class PubNubManager: NSObject, PNObjectEventListener {
     var client: PubNub!
@@ -17,18 +22,21 @@ class PubNubManager: NSObject, PNObjectEventListener {
         let config = PNConfiguration(publishKey: "pub-c-96d69393-2a7b-4cb9-8512-b2f658ff6575", subscribeKey: "sub-c-c235e5ec-9f04-11e5-9a49-02ee2ddab7fe")
         client = PubNub.clientWithConfiguration(config)
         client.addListener(self)
+        subscribeToAllChannels()
+    }
+
+    func subscribeToAllChannels() {
+        client.subscribeToChannels(ChannelsIDs, withPresence: true)
     }
     
-    let channelsIDs: [String] = [
-        "com.atlassian.walkintologin_\(2)_\(1)",
-        "com.atlassian.walkintologin_\(2)_\(2)"
-    ]
-    func subscribeToAllChannels() {
-//        let channel = PNChannel.channelWithName("com.atlassian.walkintologin_\(minorInt)_\(majorInt)", shouldObservePresence: true) as PNChannel
+    func sendMessage(message: String, channel: String) {
+        client.publish(message, toChannel: channel, compressed: true) { (status) -> Void in
+            print("published")
+        }
     }
     
     func client(client: PubNub!, didReceiveMessage message: PNMessageResult!) {
-        
+        print("Recieved: \(message)")
     }
     func client(client: PubNub!, didReceivePresenceEvent event: PNPresenceEventResult!) {
         

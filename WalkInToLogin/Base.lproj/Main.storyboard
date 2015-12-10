@@ -16,9 +16,26 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEP-fN-sDb">
+                                <rect key="frame" x="282" y="60" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="send:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EeX-ra-cF7"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GEP-fN-sDb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="012-Kp-Uq5"/>
+                            <constraint firstItem="GEP-fN-sDb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ocj-8d-6fN"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="send" destination="GEP-fN-sDb" id="hPy-0I-pEr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,9 +14,8 @@ typealias BeaconID = UInt16
 
 class ViewController: UIViewController, CBPeripheralManagerDelegate {
 
-    let majorInt = 9
+    @IBOutlet weak var send: UIButton!
     var major: UInt16!
-    let minorInt = 6
     var minor: UInt16!
     let uuid = NSUUID(UUIDString: "0CF052C2-97CA-407C-84F8-B62AAC4E9020")
     var peripheralManager = CBPeripheralManager()
@@ -26,14 +25,18 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        major = 9
+        minor = 6
         let region = CLBeaconRegion(proximityUUID: self.uuid!, major: self.major , minor: self.minor, identifier: "com.atlassian.walkintologin")
         self.advertisedData = region.peripheralDataWithMeasuredPower(nil)
         self.peripheralManager = CBPeripheralManager(delegate: self, queue: nil, options: nil)
 
         SharedPubNubManager.instantiatePubNub()
-//        channel = PNChannel.channelWithName("com.atlassian.walkintologin_\(minorInt)_\(majorInt)", shouldObservePresence: true) as PNChannel
     }
 
+    @IBAction func send(sender: AnyObject) {
+        SharedOfficeManager.enterRoom(21)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

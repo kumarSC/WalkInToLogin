@@ -27,10 +27,11 @@ class OfficeManager {
     }
     
     func enterRoom(id: RoomID) {
-        
+        SharedPubNubManager.sendMessage("in", channel: ChannelsIDs[0])
     }
     
     func exitRoom(id: RoomID) {
+        
     }
     
     func room(id: RoomID) -> Room? {
