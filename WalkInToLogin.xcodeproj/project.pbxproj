@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3C2BC7A49E586174651B550E /* Pods_WalkInToLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F3F8E76B7459265465AA89 /* Pods_WalkInToLogin.framework */; };
+		CFA811BC1C196D2700C5DF99 /* OfficeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA811BA1C196D2700C5DF99 /* OfficeManager.swift */; };
+		CFA811BD1C196D2700C5DF99 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA811BB1C196D2700C5DF99 /* UserManager.swift */; };
 		DDD8C5F21C19317600CED307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8C5F11C19317600CED307 /* AppDelegate.swift */; };
 		DDD8C5F41C19317600CED307 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8C5F31C19317600CED307 /* ViewController.swift */; };
 		DDD8C5F71C19317600CED307 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD8C5F51C19317600CED307 /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CFA811BA1C196D2700C5DF99 /* OfficeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficeManager.swift; sourceTree = "<group>"; };
+		CFA811BB1C196D2700C5DF99 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		DDD8C5EE1C19317600CED307 /* WalkInToLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkInToLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDD8C5F11C19317600CED307 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDD8C5F31C19317600CED307 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 			children = (
 				DDD8C5F11C19317600CED307 /* AppDelegate.swift */,
 				DDD8C5F31C19317600CED307 /* ViewController.swift */,
+				CFA811BA1C196D2700C5DF99 /* OfficeManager.swift */,
+				CFA811BB1C196D2700C5DF99 /* UserManager.swift */,
 				DDD8C5F51C19317600CED307 /* Main.storyboard */,
 				DDD8C5FB1C19317600CED307 /* Assets.xcassets */,
 				DDD8C5FD1C19317600CED307 /* LaunchScreen.storyboard */,
@@ -337,7 +343,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDD8C5F41C19317600CED307 /* ViewController.swift in Sources */,
+				CFA811BC1C196D2700C5DF99 /* OfficeManager.swift in Sources */,
 				DDD8C5F21C19317600CED307 /* AppDelegate.swift in Sources */,
+				CFA811BD1C196D2700C5DF99 /* UserManager.swift in Sources */,
 				DDD8C5FA1C19317600CED307 /* WalkInToLogin.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
