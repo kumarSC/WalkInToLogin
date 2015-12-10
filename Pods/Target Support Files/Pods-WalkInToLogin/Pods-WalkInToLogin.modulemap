@@ -1,0 +1,6 @@
+framework module Pods_WalkInToLogin {
+  umbrella header "Pods-WalkInToLogin-umbrella.h"
+
+  export *
+  module * { export * }
+}

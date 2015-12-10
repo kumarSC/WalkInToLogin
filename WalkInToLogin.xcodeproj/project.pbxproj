@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C2BC7A49E586174651B550E /* Pods_WalkInToLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F3F8E76B7459265465AA89 /* Pods_WalkInToLogin.framework */; };
 		DDD8C5F21C19317600CED307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8C5F11C19317600CED307 /* AppDelegate.swift */; };
 		DDD8C5F41C19317600CED307 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8C5F31C19317600CED307 /* ViewController.swift */; };
 		DDD8C5F71C19317600CED307 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD8C5F51C19317600CED307 /* Main.storyboard */; };
@@ -49,6 +50,9 @@
 		DDD8C6101C19317600CED307 /* WalkInToLoginUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalkInToLoginUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDD8C6141C19317600CED307 /* WalkInToLoginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkInToLoginUITests.swift; sourceTree = "<group>"; };
 		DDD8C6161C19317600CED307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E81C2D6EC3B8971659111FD3 /* Pods-WalkInToLogin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkInToLogin.release.xcconfig"; path = "Pods/Target Support Files/Pods-WalkInToLogin/Pods-WalkInToLogin.release.xcconfig"; sourceTree = "<group>"; };
+		F4F3F8E76B7459265465AA89 /* Pods_WalkInToLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalkInToLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F502F44A65256564D704B736 /* Pods-WalkInToLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkInToLogin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WalkInToLogin/Pods-WalkInToLogin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C2BC7A49E586174651B550E /* Pods_WalkInToLogin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +81,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7595F74642076668F601C6A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4F3F8E76B7459265465AA89 /* Pods_WalkInToLogin.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C98BF0D52E01C16753AA561A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F502F44A65256564D704B736 /* Pods-WalkInToLogin.debug.xcconfig */,
+				E81C2D6EC3B8971659111FD3 /* Pods-WalkInToLogin.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DDD8C5E51C19317600CED307 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +105,8 @@
 				DDD8C6081C19317600CED307 /* WalkInToLoginTests */,
 				DDD8C6131C19317600CED307 /* WalkInToLoginUITests */,
 				DDD8C5EF1C19317600CED307 /* Products */,
+				C98BF0D52E01C16753AA561A /* Pods */,
+				7595F74642076668F601C6A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,9 +159,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DDD8C6191C19317600CED307 /* Build configuration list for PBXNativeTarget "WalkInToLogin" */;
 			buildPhases = (
+				29F4A8620D918C72B353EB37 /* Check Pods Manifest.lock */,
 				DDD8C5EA1C19317600CED307 /* Sources */,
 				DDD8C5EB1C19317600CED307 /* Frameworks */,
 				DDD8C5EC1C19317600CED307 /* Resources */,
+				471BC1224EAA64B265A8E8A4 /* Embed Pods Frameworks */,
+				D0E7BB877A6195858733B854 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +280,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		29F4A8620D918C72B353EB37 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		471BC1224EAA64B265A8E8A4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WalkInToLogin/Pods-WalkInToLogin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0E7BB877A6195858733B854 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WalkInToLogin/Pods-WalkInToLogin-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DDD8C5EA1C19317600CED307 /* Sources */ = {
@@ -401,6 +476,7 @@
 		};
 		DDD8C61A1C19317600CED307 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F502F44A65256564D704B736 /* Pods-WalkInToLogin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WalkInToLogin/Info.plist;
@@ -412,6 +488,7 @@
 		};
 		DDD8C61B1C19317600CED307 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E81C2D6EC3B8971659111FD3 /* Pods-WalkInToLogin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WalkInToLogin/Info.plist;
@@ -488,6 +565,7 @@
 				DDD8C61B1C19317600CED307 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DDD8C61C1C19317600CED307 /* Build configuration list for PBXNativeTarget "WalkInToLoginTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +574,7 @@
 				DDD8C61E1C19317600CED307 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DDD8C61F1C19317600CED307 /* Build configuration list for PBXNativeTarget "WalkInToLoginUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +583,7 @@
 				DDD8C6211C19317600CED307 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
