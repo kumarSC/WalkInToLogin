@@ -15,9 +15,9 @@ typealias BeaconID = UInt16
 class ViewController: UIViewController, CBPeripheralManagerDelegate {
 
     let majorInt = 9
-    let major: UInt16!
+    var major: UInt16!
     let minorInt = 6
-    let minor: UInt16!
+    var minor: UInt16!
     let uuid = NSUUID(UUIDString: "0CF052C2-97CA-407C-84F8-B62AAC4E9020")
     var peripheralManager = CBPeripheralManager()
     var advertisedData = NSDictionary()
@@ -42,6 +42,8 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate {
             self.peripheralManager.startAdvertising((self.advertisedData as! [String : AnyObject]))
         case CBPeripheralManagerState.PoweredOff:
             self.peripheralManager.stopAdvertising()
+        default:
+            print("Bluetooth Status: Unknown")
 
         }
     }
