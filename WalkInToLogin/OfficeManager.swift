@@ -19,19 +19,31 @@ class OfficeManager {
     }
     
     func watchRoom(id: RoomID) {
-        
+        // For Demo. Default to watch all room
     }
     
     func unwatchRoom(id: RoomID) {
-        
+        // For Demo. Default to watch all room
     }
     
     func enterRoom(id: RoomID) {
-        SharedPubNubManager.sendMessage("in", channel: ChannelsIDs[0])
+        let message = [
+            "presenceEvent": "join",
+            "userID": SharedUserManager.currentUser.id
+        ]
+        SharedPubNubManager.sendMessage(message, channel: Room.channelIDFromRoomID(id), presenceEvent: .Join)
     }
     
     func exitRoom(id: RoomID) {
-        
+        let message = [
+            "presenceEvent": "leave",
+            "userID": SharedUserManager.currentUser.id
+        ]
+        SharedPubNubManager.sendMessage(message, channel: Room.channelIDFromRoomID(id), presenceEvent: .Leave)
+    }
+    
+    func rooms() -> [Room] {
+        return office.rooms
     }
     
     func room(id: RoomID) -> Room? {
@@ -62,5 +74,23 @@ class Room {
     init(id theId: RoomID, name theName: String) {
         id = theId
         name = theName
+    }
+    
+    func users(completion: ([User]) -> Void) {
+//        return testUsers;
+        
+        SharedPubNubManager.userIDsInChannel(Room.channelIDFromRoomID(id)) {
+            userIDs in
+            let users = userIDs.flatMap { (id) -> User? in
+                SharedUserManager.userWithID(id)
+            }
+            completion(users)
+        }
+    }
+    
+    // MARK: - Helpers
+    static func channelIDFromRoomID(id: RoomID) -> String {
+        // TODO: do this
+        return  "com.atlassian.walkintologin_\(id)"
     }
 }

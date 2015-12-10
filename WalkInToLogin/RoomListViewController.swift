@@ -12,7 +12,7 @@ import CoreBluetooth
 
 typealias BeaconID = UInt16
 
-class ViewController: UIViewController, CBPeripheralManagerDelegate {
+class RoomListViewController: UITableViewController, CBPeripheralManagerDelegate {
 
     @IBOutlet weak var send: UIButton!
     var major: UInt16!
@@ -27,6 +27,8 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Rooms"
+        
         major = 9
         minor = 6
         let region = CLBeaconRegion(proximityUUID: self.uuid!, major: self.major , minor: self.minor, identifier: "com.atlassian.walkintologin")
@@ -58,5 +60,26 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate {
             print("Bluetooth Status: Unknown")
 
         }
+    }
+    
+    // MARK: - Datasource & Delegate
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return SharedOfficeManager.rooms().count
+    }
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let room = SharedOfficeManager.rooms()[indexPath.row]
+        cell.textLabel?.text = room.name
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let room = SharedOfficeManager.rooms()[indexPath.row]
+        let userList = self.storyboard?.instantiateViewControllerWithIdentifier("UsersListViewController") as! UsersListViewController
+        userList.roomID = room.id
+        self.navigationController?.pushViewController(userList, animated: true)
     }
 }

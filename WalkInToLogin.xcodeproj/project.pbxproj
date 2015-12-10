@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		3C2BC7A49E586174651B550E /* Pods_WalkInToLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F3F8E76B7459265465AA89 /* Pods_WalkInToLogin.framework */; };
+		BABEFB661C19D61100B01E55 /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABEFB651C19D61100B01E55 /* UsersListViewController.swift */; };
+		BABEFB681C19D88200B01E55 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABEFB671C19D88200B01E55 /* LoginViewController.swift */; };
+		BABEFB6A1C19DA7500B01E55 /* TestBeaconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABEFB691C19DA7500B01E55 /* TestBeaconViewController.swift */; };
 		CFA811BC1C196D2700C5DF99 /* OfficeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA811BA1C196D2700C5DF99 /* OfficeManager.swift */; };
 		CFA811BD1C196D2700C5DF99 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA811BB1C196D2700C5DF99 /* UserManager.swift */; };
 		CFA811BF1C19722200C5DF99 /* PubNubManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA811BE1C19722200C5DF99 /* PubNubManager.swift */; };
 		DDD8C5F21C19317600CED307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8C5F11C19317600CED307 /* AppDelegate.swift */; };
-		DDD8C5F41C19317600CED307 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8C5F31C19317600CED307 /* ViewController.swift */; };
+		DDD8C5F41C19317600CED307 /* RoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8C5F31C19317600CED307 /* RoomListViewController.swift */; };
 		DDD8C5F71C19317600CED307 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD8C5F51C19317600CED307 /* Main.storyboard */; };
 		DDD8C5FA1C19317600CED307 /* WalkInToLogin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDD8C5F81C19317600CED307 /* WalkInToLogin.xcdatamodeld */; };
 		DDD8C5FC1C19317600CED307 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDD8C5FB1C19317600CED307 /* Assets.xcassets */; };
@@ -40,12 +43,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BABEFB651C19D61100B01E55 /* UsersListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
+		BABEFB671C19D88200B01E55 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BABEFB691C19DA7500B01E55 /* TestBeaconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBeaconViewController.swift; sourceTree = "<group>"; };
 		CFA811BA1C196D2700C5DF99 /* OfficeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficeManager.swift; sourceTree = "<group>"; };
 		CFA811BB1C196D2700C5DF99 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		CFA811BE1C19722200C5DF99 /* PubNubManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubNubManager.swift; sourceTree = "<group>"; };
 		DDD8C5EE1C19317600CED307 /* WalkInToLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkInToLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDD8C5F11C19317600CED307 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DDD8C5F31C19317600CED307 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DDD8C5F31C19317600CED307 /* RoomListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListViewController.swift; sourceTree = "<group>"; };
 		DDD8C5F61C19317600CED307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDD8C5F91C19317600CED307 /* WalkInToLogin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WalkInToLogin.xcdatamodel; sourceTree = "<group>"; };
 		DDD8C5FB1C19317600CED307 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,7 +139,10 @@
 			isa = PBXGroup;
 			children = (
 				DDD8C5F11C19317600CED307 /* AppDelegate.swift */,
-				DDD8C5F31C19317600CED307 /* ViewController.swift */,
+				DDD8C5F31C19317600CED307 /* RoomListViewController.swift */,
+				BABEFB651C19D61100B01E55 /* UsersListViewController.swift */,
+				BABEFB671C19D88200B01E55 /* LoginViewController.swift */,
+				BABEFB691C19DA7500B01E55 /* TestBeaconViewController.swift */,
 				DDD8C6261C198CC600CED307 /* BeaconObserver.swift */,
 				CFA811BA1C196D2700C5DF99 /* OfficeManager.swift */,
 				CFA811BB1C196D2700C5DF99 /* UserManager.swift */,
@@ -354,11 +363,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDD8C5F41C19317600CED307 /* ViewController.swift in Sources */,
+				BABEFB6A1C19DA7500B01E55 /* TestBeaconViewController.swift in Sources */,
+				BABEFB681C19D88200B01E55 /* LoginViewController.swift in Sources */,
+				DDD8C5F41C19317600CED307 /* RoomListViewController.swift in Sources */,
 				CFA811BC1C196D2700C5DF99 /* OfficeManager.swift in Sources */,
 				DDD8C5F21C19317600CED307 /* AppDelegate.swift in Sources */,
 				CFA811BF1C19722200C5DF99 /* PubNubManager.swift in Sources */,
 				CFA811BD1C196D2700C5DF99 /* UserManager.swift in Sources */,
+				BABEFB661C19D61100B01E55 /* UsersListViewController.swift in Sources */,
 				DDD8C5FA1C19317600CED307 /* WalkInToLogin.xcdatamodeld in Sources */,
 				DDD8C6271C198CC600CED307 /* BeaconObserver.swift in Sources */,
 			);
