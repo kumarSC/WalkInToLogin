@@ -10,7 +10,9 @@ import Foundation
 
 typealias UserID = UInt16
 
-class UserManager {
+var currentUser: User!
+
+class User {
     let id: UserID
     var name: String
     init(id theID: UserID, name theName: String) {

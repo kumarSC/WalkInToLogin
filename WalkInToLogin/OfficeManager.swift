@@ -11,10 +11,11 @@ import Foundation
 typealias RoomID = UInt16
 typealias OfficeID = UInt16
 
+var SharedOfficeManager = OfficeManager(officeID: 12345)
 class OfficeManager {
     private var office: Office!
-    init(id: OfficeID) {
-        office = Office(id: 12345)
+    init(officeID id: OfficeID) {
+        office = Office(id: id)
     }
     
     func watchRoom(id: RoomID) {
