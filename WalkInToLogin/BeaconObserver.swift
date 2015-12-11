@@ -62,16 +62,22 @@ class Observer: NSObject, CLLocationManagerDelegate {
         }
         else {
             locationManager.stopRangingBeaconsInRegion(beaconRegion)
-            SharedOfficeManager.exitRoom(21)
 
         }
     }
 
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
+//        if isSubscribed {
+//            SharedOfficeManager.enterRoom(21)
+//        }
+
         print("Beacon in range")
     }
 
     func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
+//        if isSubscribed {
+//            SharedOfficeManager.exitRoom(21)
+//        }
         print("No beacons in range")
     }
 
@@ -90,11 +96,12 @@ class Observer: NSObject, CLLocationManagerDelegate {
         print(error)
     }
 
+    var inARoom = false
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
 
         let foundBeacons = beacons
             if foundBeacons.count > 0 {
-                if let closestBeacon = foundBeacons[0] as? CLBeacon {
+                let closestBeacon = foundBeacons[0]
                     if closestBeacon != lastFoundBeacon || lastProximity != closestBeacon.proximity  {
                         lastFoundBeacon = closestBeacon
                         lastProximity = closestBeacon.proximity
@@ -103,9 +110,12 @@ class Observer: NSObject, CLLocationManagerDelegate {
                         switch lastFoundBeacon.proximity {
                         case CLProximity.Immediate:
                             proximityMessage = "Very close"
-                            if !isSubscribed {
+                            if isSubscribed {
 //                                SharedPubNubManager.subscribeToAllChannels()
-                                SharedOfficeManager.enterRoom(21)
+                                if inARoom == false {
+                                    inARoom = true
+                                    SharedOfficeManager.enterRoom(21)
+                                }
                             }
 
                         case CLProximity.Near:
@@ -113,12 +123,19 @@ class Observer: NSObject, CLLocationManagerDelegate {
 
                         case CLProximity.Far:
                             proximityMessage = "Far"
+                            if inARoom == true {
+                                inARoom = false
+                                SharedOfficeManager.exitRoom(21)
+                            }
 
                         default:
                             proximityMessage = "Where's the beacon?"
+
                         }
+
+                        print("proximityMessage: \(proximityMessage)")
                     }
-                }
+//                }
             }
         }
         
