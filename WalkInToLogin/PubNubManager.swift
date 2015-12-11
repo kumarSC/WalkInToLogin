@@ -31,8 +31,8 @@ class PubNubManager: NSObject, PNObjectEventListener {
     // MARK: - Configuration
     func instantiatePubNub(refresh: Bool = false) {
         if client != nil && !refresh { return }
-        //            let config = PNConfiguration(publishKey: "pub-c-96d69393-2a7b-4cb9-8512-b2f658ff6575", subscribeKey: "sub-c-c235e5ec-9f04-11e5-9a49-02ee2ddab7fe")
-        let config = PNConfiguration(publishKey: "pub-c-0e3269fd-9b33-449b-b235-f730a760f206", subscribeKey: "sub-c-efa5f752-2c37-11e3-9343-02ee2ddab7fe")
+                    let config = PNConfiguration(publishKey: "pub-c-96d69393-2a7b-4cb9-8512-b2f658ff6575", subscribeKey: "sub-c-c235e5ec-9f04-11e5-9a49-02ee2ddab7fe")
+//        let config = PNConfiguration(publishKey: "pub-c-0e3269fd-9b33-449b-b235-f730a760f206", subscribeKey: "sub-c-efa5f752-2c37-11e3-9343-02ee2ddab7fe")
         client = PubNub.clientWithConfiguration(config)
         config.uuid = SharedUserManager.currentUser.id
         self.client?.copyWithConfiguration(config, completion: { [weak self] (updatedClient) -> Void in

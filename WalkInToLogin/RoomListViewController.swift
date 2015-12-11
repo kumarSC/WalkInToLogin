@@ -36,9 +36,15 @@ class RoomListViewController: UITableViewController, CBPeripheralManagerDelegate
 //        instantiateEmitter()
     }
 
+    var beaconObserver: Observer?
     func instaniateObserver() {
-        let beaconObserver = Observer()
-        beaconObserver.switchSpotting()
+        beaconObserver = Observer()
+        let startObserveItem = UIBarButtonItem(title: "Start", style: .Done, target: self, action: "startObserve:")
+        navigationItem.leftBarButtonItem = startObserveItem
+    }
+
+    func startObserve(sender: AnyObject) {
+        beaconObserver?.switchSpotting()
     }
 
     func instantiateEmitter() {

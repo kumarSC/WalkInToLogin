@@ -43,7 +43,6 @@ class Observer: NSObject, CLLocationManagerDelegate {
     }
 
     func switchSpotting() {
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
         locationManager.startMonitoringForRegion(beaconRegion)
         locationManager.startUpdatingLocation()
