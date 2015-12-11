@@ -49,6 +49,23 @@ class OfficeManager {
     func room(id: RoomID) -> Room? {
         return office.room(id)
     }
+    
+    class func notificationPayloadToChannel(channel: String) -> [String: AnyObject] {
+        let username = SharedUserManager.currentUser.name
+        let roomText: String
+        if let roomID = Room.roomIDFromChannelID(channel),
+            let room = SharedOfficeManager.room(roomID) {
+            roomText = "room \(room.name)"
+        } else {
+            roomText = "some room"
+        }
+        return [
+            "aps" : [
+                "alert" : "\(username) entered \(roomText). You better get your ass in there!!!",
+                "badge" : 1,
+            ],
+        ]
+    }
 }
 
 class Office {
@@ -92,5 +109,9 @@ class Room {
     static func channelIDFromRoomID(id: RoomID) -> String {
         // TODO: do this
         return  "com.atlassian.walkintologin_\(id)"
+    }
+    static func roomIDFromChannelID(id: String) -> RoomID? {
+        let index = id.endIndex.advancedBy(-2)
+        return RoomID(id.substringFromIndex(index))
     }
 }

@@ -31,8 +31,8 @@ class PubNubManager: NSObject, PNObjectEventListener {
     // MARK: - Configuration
     func instantiatePubNub(refresh: Bool = false) {
         if client != nil && !refresh { return }
-        //            let config = PNConfiguration(publishKey: "pub-c-96d69393-2a7b-4cb9-8512-b2f658ff6575", subscribeKey: "sub-c-c235e5ec-9f04-11e5-9a49-02ee2ddab7fe")
-        let config = PNConfiguration(publishKey: "pub-c-0e3269fd-9b33-449b-b235-f730a760f206", subscribeKey: "sub-c-efa5f752-2c37-11e3-9343-02ee2ddab7fe")
+        let config = PNConfiguration(publishKey: "pub-c-96d69393-2a7b-4cb9-8512-b2f658ff6575", subscribeKey: "sub-c-c235e5ec-9f04-11e5-9a49-02ee2ddab7fe")
+//        let config = PNConfiguration(publishKey: "pub-c-0e3269fd-9b33-449b-b235-f730a760f206", subscribeKey: "sub-c-efa5f752-2c37-11e3-9343-02ee2ddab7fe")
         client = PubNub.clientWithConfiguration(config)
         config.uuid = SharedUserManager.currentUser.id
         self.client?.copyWithConfiguration(config, completion: { [weak self] (updatedClient) -> Void in
@@ -42,35 +42,24 @@ class PubNubManager: NSObject, PNObjectEventListener {
             })
     }
 
-    func instantiateObserver() {
-        let config = PNConfiguration(publishKey: "pub-c-96d69393-2a7b-4cb9-8512-b2f658ff6575", subscribeKey: "sub-c-c235e5ec-9f04-11e5-9a49-02ee2ddab7fe")
-        client = PubNub.clientWithConfiguration(config)
-        client!.addListener(self)
-    }
-
-
-    
-
     func enablePushNotification(devicePushToken: NSData) {
         SharedPubNubManager.instantiatePubNub()
-        self.client?.pushNotificationEnabledChannelsForDeviceWithPushToken(devicePushToken,
-            andCompletion: { (result, status) -> Void in
+        self.client?.addPushNotificationsOnChannels(ChannelsIDs, withDevicePushToken: devicePushToken, andCompletion: { (status) -> Void in
+            if (!status.error) {
                 
-                if status == nil {
-                    
-                    // Handle downloaded list of channels using: result.data.channels
-                    print("push works")
-                }
-                else {
-                    
-                    print("push failed")
-                    // Handle audition error. Check 'category' property
-                    // to find out possible reason because of which request did fail.
-                    // Review 'errorData' property (which has PNErrorData data type) of status
-                    // object to get additional information about issue.
-                    //
-                    // Request can be resent using: status.retry()
-                }
+                print("push works")
+            }
+            else {
+                
+                print("push failed")
+                print("errorData: \(status.errorData.data)")
+                // Handle audition error. Check 'category' property
+                // to find out possible reason because of which request did fail.
+                // Review 'errorData' property (which has PNErrorData data type) of status
+                // object to get additional information about issue.
+                //
+                // Request can be resent using: status.retry()
+            }
         })
     }
     
@@ -134,7 +123,8 @@ class PubNubManager: NSObject, PNObjectEventListener {
     
     // MARK: - Publish
     func sendMessage(message: AnyObject, channel: String, presenceEvent: PresenceEvent) {
-        client?.publish(message, toChannel: channel, mobilePushPayload: notificationPayloadToChannel(channel), compressed: true) { (status) -> Void in
+        let payload = OfficeManager.notificationPayloadToChannel(channel)
+        client?.publish(message, toChannel: channel, mobilePushPayload: payload, compressed: true) { (status) -> Void in
             if !status.error {
                 print("published")
             } else {
@@ -149,15 +139,6 @@ class PubNubManager: NSObject, PNObjectEventListener {
         case .Leave:
             client?.unsubscribeFromChannels([presenceChannel], withPresence: false)
         }
-    }
-    
-    func notificationPayloadToChannel(channel: String) -> [String: AnyObject] {
-        return [
-            "aps" : [
-                "alert" : "Some one entered room \(channel)",
-                "badge" : 1,
-            ],
-        ]
     }
     
     // MARK: - Subscribe
