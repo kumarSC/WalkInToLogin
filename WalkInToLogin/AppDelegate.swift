@@ -34,8 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let rootViewController = self.window?.rootViewController
         let aps = userInfo["aps"] as? [String: AnyObject] ?? [String: AnyObject]()
         let message = aps["alert"] as? String ?? ""
-        let alert = UIAlertView(title: "New Event", message: message, delegate: nil, cancelButtonTitle: "Ok")
-        alert.show()
+        if message != "Hello from the PubNub Swift SDK" {
+            let alert = UIAlertView(title: "New Event", message: message, delegate: nil, cancelButtonTitle: "Ok")
+            alert.show()
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {

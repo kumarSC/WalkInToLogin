@@ -223,6 +223,7 @@ class PubNubManager: NSObject, PNObjectEventListener {
             
             // Select last object from list of channels and send message to it.
             let targetChannel = client.channels().last as! String
+            /*
             client.publish("Hello from the PubNub Swift SDK", toChannel: targetChannel,
                 compressed: false, withCompletion: { (status) -> Void in
                     
@@ -241,6 +242,7 @@ class PubNubManager: NSObject, PNObjectEventListener {
                         // Request can be resent using: status.retry()
                     }
             })
+*/
         }
         else if status.category == .PNReconnectedCategory {
             

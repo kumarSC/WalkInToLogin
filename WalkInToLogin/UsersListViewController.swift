@@ -15,11 +15,23 @@ class UsersListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl = refreshControl
         room = SharedOfficeManager.room(roomID)
+        updateUsers()
+    }
+    
+    func updateUsers() {
         room.users() { [weak self] (theUsers) -> Void in
             self?.users = theUsers
             self?.tableView.reloadData()
+            self?.refreshControl?.endRefreshing()
         }
+    }
+    
+    func refresh(sender: AnyObject) {
+        updateUsers()
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
