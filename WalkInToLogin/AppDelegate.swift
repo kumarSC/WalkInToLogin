@@ -31,6 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         print("Recieved Notification: \(userInfo)")
+//        let rootViewController = self.window?.rootViewController
+        let aps = userInfo["aps"] as? [String: AnyObject] ?? [String: AnyObject]()
+        let message = aps["alert"] as? String ?? ""
+        let alert = UIAlertView(title: "New Event", message: message, delegate: nil, cancelButtonTitle: "Ok")
+        alert.show()
     }
 
     func applicationWillResignActive(application: UIApplication) {

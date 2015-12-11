@@ -123,7 +123,7 @@ class PubNubManager: NSObject, PNObjectEventListener {
     
     // MARK: - Publish
     func sendMessage(message: AnyObject, channel: String, presenceEvent: PresenceEvent) {
-        let payload = OfficeManager.notificationPayloadToChannel(channel)
+        let payload = OfficeManager.notificationPayloadToChannel(channel, presence: presenceEvent)
         client?.publish(message, toChannel: channel, mobilePushPayload: payload, compressed: true) { (status) -> Void in
             if !status.error {
                 print("published")
