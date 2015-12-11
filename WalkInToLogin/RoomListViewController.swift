@@ -32,8 +32,8 @@ class RoomListViewController: UITableViewController, CBPeripheralManagerDelegate
 
         SharedPubNubManager.instantiatePubNub()
 
-        instaniateObserver()
-//        instantiateEmitter()
+//        instaniateObserver()
+        instantiateEmitter()
     }
 
     var beaconObserver: Observer?
@@ -78,6 +78,7 @@ class RoomListViewController: UITableViewController, CBPeripheralManagerDelegate
             print("Bluetooth Status: Unknown")
 
         }
+        print("statusMessage: \(statusMessage)")
     }
     
     // MARK: - Datasource & Delegate
