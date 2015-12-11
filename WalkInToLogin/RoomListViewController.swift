@@ -32,8 +32,8 @@ class RoomListViewController: UITableViewController, CBPeripheralManagerDelegate
 
         SharedPubNubManager.instantiatePubNub()
 
-//        instaniateObserver()
-        instantiateEmitter()
+        instaniateObserver()
+//        instantiateEmitter()
     }
 
     var beaconObserver: Observer?

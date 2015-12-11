@@ -19,6 +19,7 @@ class UsersListViewController: UITableViewController {
         refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refreshControl
         room = SharedOfficeManager.room(roomID)
+        self.title = "Room \(room.name)"
         updateUsers()
     }
     
