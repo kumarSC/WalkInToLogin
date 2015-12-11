@@ -50,7 +50,7 @@ class OfficeManager {
         return office.room(id)
     }
     
-    class func notificationPayloadToChannel(channel: String) -> [String: AnyObject] {
+    class func notificationPayloadToChannel(channel: String, presence: PresenceEvent) -> [String: AnyObject] {
         let username = SharedUserManager.currentUser.name
         let roomText: String
         if let roomID = Room.roomIDFromChannelID(channel),
@@ -59,9 +59,18 @@ class OfficeManager {
         } else {
             roomText = "some room"
         }
+        
+        let alert: String
+        switch presence {
+        case .Join:
+            alert = "\(username) entered \(roomText). You better get your ass in there!!!"
+        case .Leave:
+            alert = "\(username) has left \(roomText)"
+        }
+        
         return [
             "aps" : [
-                "alert" : "\(username) entered \(roomText). You better get your ass in there!!!",
+                "alert" : alert,
                 "badge" : 1,
             ],
         ]

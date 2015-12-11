@@ -55,6 +55,20 @@ class RoomListViewController: UITableViewController, CBPeripheralManagerDelegate
         let region = CLBeaconRegion(proximityUUID: self.uuid!, major: self.major , minor: self.minor, identifier: "com.atlassian.walkintologin")
         self.advertisedData = region.peripheralDataWithMeasuredPower(nil)
         self.peripheralManager = CBPeripheralManager(delegate: self, queue: nil, options: nil)
+        let stopEmitItem = UIBarButtonItem(title: "Stop emit", style: .Done, target: self, action: "stopEmit:")
+        navigationItem.rightBarButtonItem = stopEmitItem
+    }
+    
+    func startEmit(sender: AnyObject) {
+        self.peripheralManager.startAdvertising((self.advertisedData as! [String : AnyObject]))
+        let stopEmitItem = UIBarButtonItem(title: "Stop emit", style: .Done, target: self, action: "stopEmit:")
+        navigationItem.rightBarButtonItem = stopEmitItem
+    }
+    
+    func stopEmit(sender: AnyObject) {
+        self.peripheralManager.stopAdvertising()
+        let startEmitItem = UIBarButtonItem(title: "Start emit", style: .Done, target: self, action: "startEmit:")
+        navigationItem.rightBarButtonItem = startEmitItem
     }
 
     @IBAction func send(sender: AnyObject) {
