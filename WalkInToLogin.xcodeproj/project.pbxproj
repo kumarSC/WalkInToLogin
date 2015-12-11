@@ -249,7 +249,7 @@
 						DevelopmentTeam = UPXU4CQZ5P;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};

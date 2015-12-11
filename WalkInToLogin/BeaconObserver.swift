@@ -12,6 +12,8 @@ import CoreLocation
 import CoreBluetooth
 
 
+let SharedBeaconObserver = Observer()
+
 class Observer: NSObject, CLLocationManagerDelegate {
 
     var beaconRegion: CLBeaconRegion!
@@ -55,6 +57,8 @@ class Observer: NSObject, CLLocationManagerDelegate {
         }
         else {
             locationManager.stopRangingBeaconsInRegion(beaconRegion)
+            SharedPubNubManager.unSubscribeFromAllChannels()
+
         }
     }
 
@@ -94,6 +98,9 @@ class Observer: NSObject, CLLocationManagerDelegate {
                         switch lastFoundBeacon.proximity {
                         case CLProximity.Immediate:
                             proximityMessage = "Very close"
+                            if !isSubscribed {
+                                SharedPubNubManager.subscribeToAllChannels()
+                            }
 
                         case CLProximity.Near:
                             proximityMessage = "Near"

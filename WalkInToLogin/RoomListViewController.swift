@@ -36,8 +36,10 @@ class RoomListViewController: UITableViewController, CBPeripheralManagerDelegate
         self.peripheralManager = CBPeripheralManager(delegate: self, queue: nil, options: nil)
 
         SharedPubNubManager.instantiatePubNub()
-        Observer()
-        Observer.switchSpotting()
+        let beaconObserver = Observer()
+        beaconObserver.switchSpotting()
+
+        
     }
 
     @IBAction func send(sender: AnyObject) {

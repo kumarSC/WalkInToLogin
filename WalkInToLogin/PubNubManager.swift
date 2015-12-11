@@ -21,6 +21,9 @@ let ChannelsIDs: [String] = [
 
 let presentSuffix = "-present"
 
+var isSubscribed = false
+
+
 let SharedPubNubManager = PubNubManager()
 class PubNubManager: NSObject, PNObjectEventListener {
     var client: PubNub?
@@ -38,6 +41,15 @@ class PubNubManager: NSObject, PNObjectEventListener {
             self?.client?.addListener(self)
             })
     }
+
+    func instantiateObserver() {
+        let config = PNConfiguration(publishKey: "pub-c-96d69393-2a7b-4cb9-8512-b2f658ff6575", subscribeKey: "sub-c-c235e5ec-9f04-11e5-9a49-02ee2ddab7fe")
+        client = PubNub.clientWithConfiguration(config)
+        client!.addListener(self)
+    }
+
+
+    
 
     func enablePushNotification(devicePushToken: NSData) {
         SharedPubNubManager.instantiatePubNub()
@@ -149,9 +161,15 @@ class PubNubManager: NSObject, PNObjectEventListener {
     }
     
     // MARK: - Subscribe
+    // Subscribe
+
     func subscribeToAllChannels() {
         client?.subscribeToChannels(ChannelsIDs, withPresence: false)
 //        client?.subscribeToChannels(ChannelsIDs, withPresence: false)
+    }
+
+    func unSubscribeFromAllChannels() {
+        client?.unsubscribeFromChannels(ChannelsIDs, withPresence: true)
     }
     
     // Handle new message from one of channels on which client has been subscribed.
@@ -210,11 +228,14 @@ class PubNubManager: NSObject, PNObjectEventListener {
     func client(client: PubNub!, didReceiveStatus status: PNStatus!) {
         
         if status.category == .PNUnexpectedDisconnectCategory {
-            
+            isSubscribed = false
+
             // This event happens when radio / connectivity is lost
         }
         else if status.category == .PNConnectedCategory {
             
+            isSubscribed = true
+
             // Connect event. You can do stuff like publish, and know you'll get it.
             // Or just use the connected event to confirm you are subscribed for
             // UI / internal notifications, etc
