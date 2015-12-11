@@ -53,7 +53,9 @@ class Observer: NSObject, CLLocationManagerDelegate {
         print("start monitoring ")
         locationManager.requestStateForRegion(region)
     }
-
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Fail to monitor: \(error)")
+    }
 
 
     func locationManager(manager: CLLocationManager, didDetermineState state: CLRegionState, forRegion region: CLRegion) {
@@ -80,12 +82,6 @@ class Observer: NSObject, CLLocationManagerDelegate {
 //        }
         print("No beacons in range")
     }
-
-
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        print(error)
-    }
-
 
     func locationManager(manager: CLLocationManager, monitoringDidFailForRegion region: CLRegion?, withError error: NSError) {
         print(error)

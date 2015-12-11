@@ -11,7 +11,7 @@ import Foundation
 typealias UserID = String
 
 let testUsers = [
-    User(id: "sushant", name: "Shushant"),
+    User(id: "sushant", name: "Sushant"),
     User(id: "tung", name: "Tung"),
     User(id: "hoang", name: "Hoang")
 ]
