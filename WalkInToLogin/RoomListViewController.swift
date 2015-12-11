@@ -18,8 +18,8 @@ class RoomListViewController: UITableViewController, CBPeripheralManagerDelegate
     var major: UInt16!
     var minor: UInt16!
     let uuid = NSUUID(UUIDString: "0CF052C2-97CA-407C-84F8-B62AAC4E9020")
-    var peripheralManager = CBPeripheralManager()
-    var advertisedData = NSDictionary()
+    var peripheralManager: CBPeripheralManager!
+    var advertisedData: NSDictionary!
 
 
 
@@ -29,17 +29,26 @@ class RoomListViewController: UITableViewController, CBPeripheralManagerDelegate
         super.viewDidLoad()
         self.title = "Rooms"
         
+
+        SharedPubNubManager.instantiatePubNub()
+
+        instaniateObserver()
+//        instantiateEmitter()
+    }
+
+    func instaniateObserver() {
+        let beaconObserver = Observer()
+        beaconObserver.switchSpotting()
+    }
+
+    func instantiateEmitter() {
+        peripheralManager = CBPeripheralManager()
+        advertisedData = NSDictionary()
         major = 9
         minor = 6
         let region = CLBeaconRegion(proximityUUID: self.uuid!, major: self.major , minor: self.minor, identifier: "com.atlassian.walkintologin")
         self.advertisedData = region.peripheralDataWithMeasuredPower(nil)
         self.peripheralManager = CBPeripheralManager(delegate: self, queue: nil, options: nil)
-
-        SharedPubNubManager.instantiatePubNub()
-        let beaconObserver = Observer()
-        beaconObserver.switchSpotting()
-
-        
     }
 
     @IBAction func send(sender: AnyObject) {

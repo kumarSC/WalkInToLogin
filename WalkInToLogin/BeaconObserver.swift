@@ -26,7 +26,10 @@ class Observer: NSObject, CLLocationManagerDelegate {
     override init() {
 
         locationManager = CLLocationManager()
-
+        let available = CLLocationManager.isMonitoringAvailableForClass(CLBeaconRegion)
+        print("available: \(available)")
+        let status = CLLocationManager.authorizationStatus()
+        print("status: \(status.rawValue)")
 
         let uuid = NSUUID(UUIDString: "0CF052C2-97CA-407C-84F8-B62AAC4E9020")
         beaconRegion = CLBeaconRegion(proximityUUID: uuid!, identifier: "com.atlassian.walkintologin")
@@ -40,15 +43,18 @@ class Observer: NSObject, CLLocationManagerDelegate {
     }
 
     func switchSpotting() {
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
         locationManager.startMonitoringForRegion(beaconRegion)
         locationManager.startUpdatingLocation()
     }
 
-    func locationManager(manager: CLLocationManager, didStartMonitoringForRegion region: CLRegion) {
-        locationManager.requestStateForRegion(region)
 
+    func locationManager(manager: CLLocationManager, didStartMonitoringForRegion region: CLRegion) {
+        print("start monitoring ")
+        locationManager.requestStateForRegion(region)
     }
+
 
 
     func locationManager(manager: CLLocationManager, didDetermineState state: CLRegionState, forRegion region: CLRegion) {
@@ -57,7 +63,7 @@ class Observer: NSObject, CLLocationManagerDelegate {
         }
         else {
             locationManager.stopRangingBeaconsInRegion(beaconRegion)
-            SharedPubNubManager.unSubscribeFromAllChannels()
+            SharedOfficeManager.exitRoom(21)
 
         }
     }
@@ -99,7 +105,8 @@ class Observer: NSObject, CLLocationManagerDelegate {
                         case CLProximity.Immediate:
                             proximityMessage = "Very close"
                             if !isSubscribed {
-                                SharedPubNubManager.subscribeToAllChannels()
+//                                SharedPubNubManager.subscribeToAllChannels()
+                                SharedOfficeManager.enterRoom(21)
                             }
 
                         case CLProximity.Near:
